@@ -1,0 +1,19 @@
+[features]
+seeds = true
+skip-lint = false
+
+[programs.localnet]
+router_program = "programs/router_program"
+vault_program = "programs/vault_program"
+fee_collector_program = "programs/fee_collector_program"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[test]
+startup_wait = 80000
+
+[workspace]
+members = ["programs/router_program", "programs/vault_program", "programs/fee_collector_program"]
+
