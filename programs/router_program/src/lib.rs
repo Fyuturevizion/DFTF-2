@@ -42,13 +42,25 @@ mod router_program {
 }
 
 #[derive(Accounts)]
-pub struct SwapExactIn {}
+pub struct SwapExactIn<'info> {
+    // TODO: define token accounts and signer required for Jupiter CPI
+    #[account(mut)]
+    pub user: Signer<'info>,
+}
 
 #[derive(Accounts)]
-pub struct AddLiquidity {}
+pub struct AddLiquidity<'info> {
+    // TODO: define pool accounts for Meteora DLMM
+    #[account(mut)]
+    pub user: Signer<'info>,
+}
 
 #[derive(Accounts)]
-pub struct RemoveLiquidity {}
+pub struct RemoveLiquidity<'info> {
+    // TODO: define position accounts for Meteora DLMM
+    #[account(mut)]
+    pub user: Signer<'info>,
+}
 
 #[event]
 pub struct ProtocolFee {
